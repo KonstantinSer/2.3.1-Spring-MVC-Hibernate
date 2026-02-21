@@ -23,8 +23,11 @@ import java.util.Properties;
 @ComponentScan(value = "web")
 public class ConfigBD {
 
-    @Autowired
-    private Environment env;
+    private final Environment env;
+
+    public ConfigBD(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public DataSource dataSource() {

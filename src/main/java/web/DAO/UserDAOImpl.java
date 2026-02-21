@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void save(User user) {
-        if (user.getName() == null) {
+        if (user.getId() == null) {
             em.persist(user);
         } else {
             em.merge(user);
